@@ -9,35 +9,55 @@
 #   - The first line contains a student's name. 
 #   - The second line contains their grade.
 
-Constraints:
+# Constraints:
+#   2<=N<=5
+#   There will always be one or more students having the second lowest grade.
 
-There will always be one or more students having the second lowest grade.
-Output Format
-Print the name(s) of any student(s) having the second lowest grade in. If there are multiple students, order their names alphabetically and print each one on a new line.
-Sample Input 0
-5
-Harry
-37.21
-Berry
-37.21
-Tina
-37.2
-Akriti
-41
-Harsh
-39
-Sample Output 0
-Berry
-Harry
-Explanation 0
-There are  students in this class whose names and grades are assembled to build the following list:
-python students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti', 41], ['Harsh', 39]]
-The lowest grade of  belongs to Tina. The second lowest grade of  belongs to both Harry and Berry, so we order their names alphabetically and print each name on a new line.
+# Output Format
+# Print the name(s) of any student(s) having the second lowest grade in. If there are multiple students, order their names alphabetically 
+# and print each one on a new line.
 
+# Sample Input 0
+# 5
+# Harry
+# 37.21
+# Berry
+# 37.21
+# Tina
+# 37.2
+# Akriti
+# 41
+# Harsh
+# 39
 
+# Sample Output 0
+# Berry
+# Harry
+# Explanation 0
 
+# There are 5 students in this class whose names and grades are assembled to build the following list:
+# python students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti', 41], ['Harsh', 39]]
+# The lowest grade of 37.2 belongs to Tina. The second lowest grade of  belongs to both Harry and Berry, so we order their names alphabetically 
+# and print each name on a new line.
 
-
-
-
-
+# Code:
+  n = int(raw_input())
+  lst = []
+  for x in range(0, n):
+      lst.append([raw_input(), float(raw_input())])
+  lst = sorted(lst, key=lambda x: x[1]);
+  for x in range(1, n):
+      if(lst[x][1] != lst[x-1][1]):
+          score = lst[x][1]
+          break
+  lst = sorted(lst);
+  for x in range(n):
+      if(lst[x][1] == score):
+          print lst[x][0]
+          
+# This is the solution of this problem. This is a very simple problem you just have to visualize the problem statement.
+# You should be clear with the concepts of loop and list to solve this problem. 
+# if you like the code:
+#   give a star
+# else:
+#   give a star
