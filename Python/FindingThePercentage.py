@@ -53,24 +53,3 @@
 #   give a star.
 # else:
 #   give a star.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
